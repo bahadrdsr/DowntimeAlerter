@@ -1,0 +1,55 @@
+@model TargetAppBindingModel;
+<div class="modal fade" id="upsertAppModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 115%;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="upsertId" />
+                <form id="upsert-form" method="post">
+                    <input type="hidden" id="Id" asp-for="Id" name="Id" />
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Name</label>
+                        <div class="col-md-9">
+                            <input type="text" autocomplete="off" asp-for="Name" name="Name" class="form-control">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Url</label>
+                        <div class="col-md-9">
+                            <input type="text" autocomplete="off" asp-for="Url" name="Url" class="form-control">
+                            <span asp-validation-for="Url" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Interval</label>
+                        <div class="col-md-9">
+                            <input type="number" autocomplete="off" asp-for="Interval" name="Interval"
+                                class="form-control">
+                            <span asp-validation-for="Interval" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">IsActive</label>
+                        <div class="col-md-9">
+                            <select class="form-control" asp-for="IsActive" name="IsActive">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                            <span asp-validation-for="IsActive" class="text-danger"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-circle" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success btn-circle" id="saveTargetApp">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

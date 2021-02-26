@@ -1,0 +1,5 @@
+D:\projects\DowntimeAlerter\Domain\obj\Debug\net5.0\Domain.csprojAssemblyReference.cache
+D:\projects\DowntimeAlerter\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\DowntimeAlerter\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\projects\DowntimeAlerter\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\projects\DowntimeAlerter\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache

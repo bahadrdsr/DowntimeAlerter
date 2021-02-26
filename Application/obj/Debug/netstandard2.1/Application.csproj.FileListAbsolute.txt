@@ -1,0 +1,14 @@
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Application.deps.json
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Application.dll
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Application.pdb
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Domain.dll
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Persistence.dll
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Persistence.pdb
+D:\projects\DowntimeAlerter\Application\bin\Debug\netstandard2.1\Domain.pdb
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.csprojAssemblyReference.cache
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.AssemblyInfoInputs.cache
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.AssemblyInfo.cs
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.csproj.CoreCompileInputs.cache
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.csproj.CopyComplete
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.dll
+D:\projects\DowntimeAlerter\Application\obj\Debug\netstandard2.1\Application.pdb

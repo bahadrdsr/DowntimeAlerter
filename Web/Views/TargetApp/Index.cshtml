@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "TargetApp Page";
+}
+<div class="page-title mb-2">
+  <h3>@ViewData["Title"]</h3>
+</div>
+<div class="row mb-2">
+     <div class="col-sm-12">  
+      <button class="btn btn-primary app-create pull-right"><i class="fas fa-plus mr-2"></i>New</button>
+    </div>
+</div>
+<div class="row">  
+    <div class="col-sm-12">  
+        <table class="table table-bordered table-striped" id="app-table">  
+            <thead>  
+                <tr>  
+                    <th scope="col">Name</th>  
+                    <th scope="col">Url</th>  
+                    <th scope="col">Interval</th>  
+                    <th scope="col">IsActive</th>  
+                    <th scope="col">Actions</th>  
+                </tr>  
+            </thead>  
+        </table>  
+    </div>  
+</div>  
+@{await Html.RenderPartialAsync("~/Views/TargetApp/_UpsertForm.cshtml", new TargetAppBindingModel());}
+@{await Html.RenderPartialAsync("~/Views/TargetApp/_DeleteConfirm.cshtml");}
+@section scripts{
+<script src="~/js/targetApp/app-list.js"></script>
+<script src="~/js/targetApp/targetApp-modals.js"></script>
+<script src="~/js/targetApp/upsert-modal.js"></script>
+<script src="~/js/targetApp/delete-modal.js"></script>
+
+}
