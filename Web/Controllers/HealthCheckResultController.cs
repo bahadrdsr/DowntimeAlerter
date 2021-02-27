@@ -25,14 +25,14 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetHealthCheckResults(JqueryDatatableParameter model)
+        public async Task<IActionResult> GetHealthCheckResults(JqueryCustomParameters model)
         {
-            var pageNo = Convert.ToInt32(Math.Floor((double)model.iDisplayStart / model.iDisplayLength) + 1);
-            var viewModel = await _mediator.Send(new GetHealthCheckResultsQuery(pageNo, model.iDisplayLength, model.targetAppId));
+            var pageNo = Convert.ToInt32(Math.Floor((double)model.Start / model.Length) + 1);
+            var viewModel = await _mediator.Send(new GetHealthCheckResultsQuery(pageNo, model.Length, model.TargetAppId));
             // Jquery Datatable's desired format
             var dataTableJson = new
             {
-                model.sEcho,
+                
                 iTotalRecords = viewModel.TotalCount,
                 iTotalDisplayRecords = viewModel.TotalCount,
                 aaData = viewModel.Data

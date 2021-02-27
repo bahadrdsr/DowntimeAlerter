@@ -14,6 +14,7 @@ $(document).ready(function () {
     bProcessing: true,
     bSearchable: false,
     paging: true,
+    searching : false,
     sPaginationType: "full_numbers",
     pageLength: 10,
     language: {

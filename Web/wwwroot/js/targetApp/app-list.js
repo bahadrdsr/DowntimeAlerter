@@ -51,8 +51,7 @@ $(document).ready(function () {
       },
       {
         mRender: function (data, type, row) {
-          return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" asp-controller="HealthCheckResult"
-                        asp-action="Index" asp-route-id="${row.id}" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`;
+          return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" href="/HealthCheckResult/Index/${row.id}" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`;
         },
       },
       // { "data": null, "defaultContent": '<button class="btn"><i class="fas fa-pencil-alt"></i></button><button class="btn"><i class="fas fa-bars"></i></button><button class="btn"><i class="fas fa-trash text-danger"></i></button>', "sortable": false }
