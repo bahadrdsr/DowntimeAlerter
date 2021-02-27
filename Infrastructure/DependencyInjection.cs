@@ -1,4 +1,5 @@
 using Application.Common.Interfaces;
+using Infrastructure.Notification;
 using Infrastructure.Security;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,7 @@ namespace Infrastructure
             // services.AddHttpContextAccessor();
             // services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUserAccessor, UserAccessor>();
+            services.AddScoped<INotificationSender, NotificationSender>();
             return services;
         }
     }

@@ -1,10 +1,12 @@
 using System;
 using System.Threading.Tasks;
+using Application.HealthCheckResult.Commands.CreateHealthCheckResult;
 using Application.TargetApp.Commands.CreateTargetApp;
 using Application.TargetApp.Commands.DeleteTargetApp;
 using Application.TargetApp.Commands.UpdateTargetApp;
 using Application.TargetApp.Queries.GetTargetAppById;
 using Application.TargetApp.Queries.GetTargetApps;
+using Hangfire;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,10 +18,12 @@ namespace Web.Controllers
     {
         private readonly ILogger<TargetAppController> _logger;
         private readonly IMediator _mediator;
-        public TargetAppController(ILogger<TargetAppController> logger, IMediator mediator)
+        private readonly IRecurringJobManager _jobManager;
+        public TargetAppController(ILogger<TargetAppController> logger, IMediator mediator, IRecurringJobManager jobManager)
         {
             _logger = logger;
             _mediator = mediator;
+            _jobManager = jobManager;
         }
 
         public ActionResult Index()
@@ -44,13 +48,13 @@ namespace Web.Controllers
             {
                 model.sEcho,
                 iTotalRecords = viewModel.TotalCount,
-                iTotalDisplayRecords = viewModel.Count,
+                iTotalDisplayRecords = viewModel.TotalCount,
                 aaData = viewModel.Data
             };
             return Ok(dataTableJson);
         }
         [HttpGet]
-        public async Task<IActionResult> GetTargetApp([FromQuery]Guid id)
+        public async Task<IActionResult> GetTargetApp([FromQuery] Guid id)
         {
             var result = await _mediator.Send(new GetTargetAppByIdQuery
             {
@@ -69,6 +73,19 @@ namespace Web.Controllers
                 Interval = model.Interval,
                 IsActive = model.IsActive
             });
+
+            if (result != null && result != Guid.Empty)
+            {
+                if (model.IsActive)
+                {
+                    var job = Hangfire.Common.Job.FromExpression(() => RunHealthCheck(result));
+                    _jobManager.AddOrUpdate(result.ToString(), job
+                    ,
+                     cronExpression: $"*/{model.Interval} * * * *",
+                      new RecurringJobOptions { TimeZone = TimeZoneInfo.Utc, QueueName = "default" });
+                }
+            }
+
             return Ok(result);
         }
         [HttpPut]
@@ -84,13 +101,31 @@ namespace Web.Controllers
                 Interval = model.Interval,
                 IsActive = model.IsActive
             });
+            if (result == Unit.Value)
+            {
+                if (model.IsActive)
+                {
+                    var job = Hangfire.Common.Job.FromExpression(() => RunHealthCheck(model.Id.Value));
+                    _jobManager.AddOrUpdate(model.Id.ToString(), job
+                    ,
+                     cronExpression: $"*/{model.Interval} * * * *",
+                      new RecurringJobOptions { TimeZone = TimeZoneInfo.Utc, QueueName = "default" });
+                }
+            }
             return Ok(result);
         }
         [HttpDelete]
         public async Task<IActionResult> DeleteTargetApp([FromQuery] Guid id)
         {
             var result = await _mediator.Send(new DeleteTargetAppCommand { Id = id });
+            _jobManager.RemoveIfExists(id.ToString());
             return Ok(result);
         }
+
+        public async Task RunHealthCheck(Guid id)
+        {
+           await _mediator.Send(new CreateHealthCheckResultCommand(id));
+        }
+
     }
 }

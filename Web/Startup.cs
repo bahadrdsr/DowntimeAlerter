@@ -16,6 +16,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Persistence;
 using Infrastructure;
+using Infrastructure.Notification;
+using Web.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace Web
 {
@@ -48,10 +51,11 @@ namespace Web
             services.AddHangfireServer();
             services.AddInfrastructure();
             services.AddApplication();
+            services.Configure<NotificationSettings>(Configuration.GetSection("Notification"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobs)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobs, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
@@ -59,7 +63,9 @@ namespace Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseGlobalExceptionHandler(logger
+                                    , errorPagePath: "/Home/Error"
+                                    , respondWithJsonErrorDetails: true);
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }

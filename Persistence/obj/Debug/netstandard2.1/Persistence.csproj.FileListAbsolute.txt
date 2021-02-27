@@ -10,3 +10,15 @@ D:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.csp
 D:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.csproj.CopyComplete
 D:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.dll
 D:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.pdb
+C:\projects\DowntimeAlerter\Persistence\bin\Debug\netstandard2.1\Persistence.deps.json
+C:\projects\DowntimeAlerter\Persistence\bin\Debug\netstandard2.1\Persistence.dll
+C:\projects\DowntimeAlerter\Persistence\bin\Debug\netstandard2.1\Persistence.pdb
+C:\projects\DowntimeAlerter\Persistence\bin\Debug\netstandard2.1\Domain.dll
+C:\projects\DowntimeAlerter\Persistence\bin\Debug\netstandard2.1\Domain.pdb
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.csprojAssemblyReference.cache
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.AssemblyInfoInputs.cache
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.AssemblyInfo.cs
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.csproj.CoreCompileInputs.cache
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.csproj.CopyComplete
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.dll
+C:\projects\DowntimeAlerter\Persistence\obj\Debug\netstandard2.1\Persistence.pdb

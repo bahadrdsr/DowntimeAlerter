@@ -6,9 +6,13 @@ namespace Application.HealthCheckResult.Commands.CreateHealthCheckResult
 {
     public class CreateHealthCheckResultCommand : IRequest
     {
+        public CreateHealthCheckResultCommand(Guid targetAppId)
+        {
+            TargetAppId = targetAppId;
+        }
         public Guid TargetAppId { get; set; }
-        public HealthCheckResultType Result { get; set; }
-        public int StatusCode { get; set; }
-        public string Message { get; set; }
+        // public HealthCheckResultType Result { get; set; }
+        // public int StatusCode { get; set; }
+        // public string Message { get; set; }
     }
 }

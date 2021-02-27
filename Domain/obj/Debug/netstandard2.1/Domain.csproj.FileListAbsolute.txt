@@ -7,3 +7,12 @@ D:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfo.
 D:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.csproj.CoreCompileInputs.cache
 D:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.dll
 D:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.pdb
+C:\projects\DowntimeAlerter\Domain\bin\Debug\netstandard2.1\Domain.deps.json
+C:\projects\DowntimeAlerter\Domain\bin\Debug\netstandard2.1\Domain.dll
+C:\projects\DowntimeAlerter\Domain\bin\Debug\netstandard2.1\Domain.pdb
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.csprojAssemblyReference.cache
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfoInputs.cache
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfo.cs
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.csproj.CoreCompileInputs.cache
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.dll
+C:\projects\DowntimeAlerter\Domain\obj\Debug\netstandard2.1\Domain.pdb

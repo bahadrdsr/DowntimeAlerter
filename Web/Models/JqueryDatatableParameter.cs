@@ -1,3 +1,5 @@
+using System;
+
 namespace Web.Models
 {
     public class JqueryDatatableParameter
@@ -11,5 +13,6 @@ namespace Web.Models
         public string sSortDir_0 { get; set; }
         public int iSortingCols { get; set; }
         public string sColumns { get; set; }
+        public Guid? targetAppId { get; set; }
     }
 }

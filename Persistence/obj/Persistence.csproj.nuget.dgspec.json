@@ -1,35 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "d:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj": {}
+    "C:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "d:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj": {
+    "C:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "d:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj",
+        "projectPath": "C:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\bahad\\.nuget\\packages\\",
-        "outputPath": "d:\\projects\\DowntimeAlerter\\Domain\\obj\\",
+        "outputPath": "C:\\projects\\DowntimeAlerter\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bahad\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
             "projectReferences": {}
           }
         },
@@ -41,7 +35,6 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -63,39 +56,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "d:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj": {
+    "C:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "d:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\projects\\DowntimeAlerter\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\bahad\\.nuget\\packages\\",
-        "outputPath": "d:\\projects\\DowntimeAlerter\\Persistence\\obj\\",
+        "outputPath": "C:\\projects\\DowntimeAlerter\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bahad\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "d:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj": {
-                "projectPath": "d:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj"
+              "C:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\projects\\DowntimeAlerter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -108,7 +95,6 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -134,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

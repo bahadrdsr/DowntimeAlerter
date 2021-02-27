@@ -20,7 +20,7 @@ namespace Application.Common.Behaviours
         {
             var name = typeof(TRequest).Name;
 
-            _logger.LogInformation("LProject Request: {Name} {@UserId} {@Request}",
+            _logger.LogInformation("DowntimeAlerter Request: {Name} {@UserId} {@Request}",
                 name, _currentUserService.UserId, request);
 
             return Task.CompletedTask;
