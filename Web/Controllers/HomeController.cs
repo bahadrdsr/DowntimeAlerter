@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.TargetApp.Queries.GetTargetApps;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Models;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

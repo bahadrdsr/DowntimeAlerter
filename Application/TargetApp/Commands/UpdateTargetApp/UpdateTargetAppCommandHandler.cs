@@ -20,7 +20,6 @@ namespace Application.TargetApp.Commands.UpdateTargetApp
         }
         public async Task<Unit> Handle(UpdateTargetAppCommand request, CancellationToken cancellationToken)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.UserId);
 
             var targetApp = await _context.TargetApps.FindAsync(request.Id);
             targetApp.Name = request.Name;
@@ -28,6 +27,7 @@ namespace Application.TargetApp.Commands.UpdateTargetApp
             targetApp.Interval = request.Interval;
             targetApp.IsActive = request.IsActive;
             targetApp.LastModified = DateTime.UtcNow;
+            targetApp.LastModifiedById = _userAccessor.UserId;
 
             _context.TargetApps.Update(targetApp);
             await _context.SaveChangesAsync(cancellationToken);

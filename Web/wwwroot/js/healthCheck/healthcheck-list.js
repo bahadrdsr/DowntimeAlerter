@@ -6,7 +6,10 @@ $(document).ready(function () {
       url: ajaxUrl,
       data: function (d) {
         return $.extend({}, d, {
-          targetAppId: targetAppId && targetAppId !="00000000-0000-0000-0000-000000000000" ? targetAppId : null,
+          targetAppId:
+            targetAppId && targetAppId != "00000000-0000-0000-0000-000000000000"
+              ? targetAppId
+              : null,
         });
       },
     },
@@ -14,7 +17,7 @@ $(document).ready(function () {
     bProcessing: true,
     bSearchable: false,
     paging: true,
-    searching : false,
+    searching: false,
     sPaginationType: "full_numbers",
     pageLength: 10,
     language: {
@@ -26,7 +29,7 @@ $(document).ready(function () {
     createdRow: function (row, data, index) {
       if (data.result == -1) {
         row.cells[2].innerHTML =
-          '<i class="fas fa-question-circle text-warning"></i>';
+          '<i class="fas fa-question-circle text-warning" title=""></i>';
       }
       if (data.result == 1) {
         row.cells[2].innerHTML =
@@ -36,6 +39,9 @@ $(document).ready(function () {
         row.cells[2].innerHTML =
           '<i class="fas fa-times-circle text-danger"></i>';
       }
+      row.cells[1].innerHTML = dayjs(data.executionTime).format(
+        "DD/MM/YYYY HH:mm:ss"
+      );
     },
     columns: [
       {
@@ -55,11 +61,6 @@ $(document).ready(function () {
       },
       {
         data: "statusCode",
-        autoWidth: true,
-        sortable: false,
-      },
-      {
-        data: "message",
         autoWidth: true,
         sortable: false,
       },

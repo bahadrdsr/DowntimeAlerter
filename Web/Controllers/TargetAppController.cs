@@ -8,12 +8,14 @@ using Application.TargetApp.Queries.GetTargetAppById;
 using Application.TargetApp.Queries.GetTargetApps;
 using Hangfire;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Models;
 
 namespace Web.Controllers
 {
+    [Authorize(Roles ="administrator")]
     public class TargetAppController : Controller
     {
         private readonly ILogger<TargetAppController> _logger;
@@ -124,7 +126,7 @@ namespace Web.Controllers
 
         public async Task RunHealthCheck(Guid id)
         {
-           await _mediator.Send(new CreateHealthCheckResultCommand(id));
+            await _mediator.Send(new CreateHealthCheckResultCommand(id));
         }
 
     }

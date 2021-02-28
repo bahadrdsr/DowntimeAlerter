@@ -325,6 +325,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
             "Hangfire.AspNetCore": {
               "target": "Package",
               "version": "[1.7.19, )"

@@ -30,7 +30,7 @@
                         <label class="col-md-3 col-form-label">Interval</label>
                         <div class="col-md-9">
                             <input type="number" autocomplete="off" asp-for="Interval" name="Interval"
-                                class="form-control">
+                                class="form-control" min="1">
                             <span asp-validation-for="Interval" class="text-danger"></span>
                         </div>
                     </div>

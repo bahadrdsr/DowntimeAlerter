@@ -1,8 +1,56 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-sm-6">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h6>Member User</h6>
+                <div class="col-sm-12">
+                    <div class="control-group p-1">
+                        <label class="control-label font-weight-bold">Email</label>
+                        <div class="controls readonly">
+                            johndoe@localhost.com
+                        </div>
+                    </div>
+                    <div class="control-group p-1">
+                        <label class="control-label font-weight-bold">Password</label>
+                        <div class="controls readonly">
+                            P@ssw0rd!
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <h6>Admin User</h6>
+                <div class="col-sm-12">
+                    <div class="control-group">
+                        <label class="control-label font-weight-bold">Email</label>
+                        <div class="controls readonly">
+                            admin@localhost.com
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label font-weight-bold">Password</label>
+                        <div class="controls readonly">
+                            P@ssw0rd!
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <h6>Some Notes</h6>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Member user can't access Target apps route</li>
+            <li class="list-group-item">You can update the IsActive flag to start/stop background job</li>
+            <li class="list-group-item">You can view all backgroundjobs at <a href="/hangfire">hangfire dashboard</a></li>
+            <li class="list-group-item">You can view the results on <a asp-controller="HealthCheckResult"
+                    asp-action="Index">Health
+                    Checks</a> page</li>
+            <li class="list-group-item">Or you can click the <i class="fas fa-bars text-primary"></i> icon on the target
+                apps page</li>
+        </ul>
+    </div>
 </div>

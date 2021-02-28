@@ -33,7 +33,7 @@ namespace Persistence
                 if (result.Succeeded)
                 {
                     userManager.AddToRoleAsync(user,
-                                        "Member").Wait();
+                                        "member").Wait();
                 }
             }
             if (await userManager.FindByNameAsync
@@ -58,8 +58,8 @@ namespace Persistence
             {
                 var user = new AppUser();
                 user.UserName = "admin";
-                user.Email = "bahadirdoser@localhost.com";
-                user.DisplayName = "Bahadir Doser";
+                user.Email = "admin@localhost.com";
+                user.DisplayName = "admin user";
 
                 IdentityResult result = userManager.CreateAsync
                 (user, "P@ssw0rd!").Result;
@@ -106,20 +106,12 @@ namespace Persistence
                         Url = "https://eksisozluk.com/",
                         CreatedById = admin.Id,
                          Created = DateTime.UtcNow
-                    },
-                    new TargetApp
-                    {
-                        Name = "DOTA",
-                        Interval = 1,
-                        IsActive = false,
-                        Url = "https://steamdb.info/api/GetGraph/?type=concurrent_week&appid=570",
-                        CreatedById = admin.Id,
-                         Created = DateTime.UtcNow
-                    },
+                    }
                 };
                 await context.TargetApps.AddRangeAsync(targetApps);
                 await context.SaveChangesAsync();
                 // return context.Genres.ToList();
+                
                 return targetApps;
             }
             return null;

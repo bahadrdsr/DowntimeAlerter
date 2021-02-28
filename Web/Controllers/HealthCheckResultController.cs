@@ -2,12 +2,14 @@ using System;
 using System.Threading.Tasks;
 using Application.HealthCheckResult.Queries.GetHealthCheckResults;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Models;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class HealthCheckResultController : Controller
     {
         private readonly ILogger<HealthCheckResultController> _logger;

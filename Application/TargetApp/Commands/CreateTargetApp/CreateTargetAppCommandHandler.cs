@@ -20,13 +20,12 @@ namespace Application.TargetApp.Commands.CreateTargetApp
 
         public async Task<Guid> Handle(CreateTargetAppCommand request, CancellationToken cancellationToken)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.UserId);
             var targetApp = new Domain.Entities.TargetApp
             {
                 Interval = request.Interval,
                 Name = request.Name,
                 Url = request.Url,
-                // CreatedById = user.Id,
+                CreatedById = _userAccessor.UserId,
                 Created = DateTime.UtcNow,
                 IsActive = request.IsActive
             };

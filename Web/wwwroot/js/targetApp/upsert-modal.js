@@ -30,6 +30,7 @@ $(document).ready(function () {
 var create = function (paramObj) {
     $.post("/TargetApp/SaveTargetApp", paramObj, function (data) {
         $('#upsertAppModal').modal('hide');
+        toastr.success('Target application succesfully created');
         $('#app-table').dataTable().fnClearTable();
         $('#app-table').dataTable().fnDestroy();
         $('#app-table')
@@ -82,8 +83,8 @@ var create = function (paramObj) {
                     },
                     {
                         mRender: function (data, type, row) {
-                            return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`
-                        }
+                            return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" href="/HealthCheckResult/Index/${row.id}" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`;
+                          },
                     }
                     // { "data": null, "defaultContent": '<button class="btn"><i class="fas fa-pencil-alt"></i></button><button class="btn"><i class="fas fa-bars"></i></button><button class="btn"><i class="fas fa-trash text-danger"></i></button>', "sortable": false }
                 ],
@@ -113,7 +114,8 @@ var update = function (paramObj) {
     $.ajax({
         url: "/TargetApp/UpdateTargetApp", type: "PUT", data: paramObj, success: function (data) {
             $('#upsertAppModal').modal('hide');
-            $('#app-table').dataTable().fnClearTable();
+        toastr.success('Target application succesfully updated');
+        $('#app-table').dataTable().fnClearTable();
             $('#app-table').dataTable().fnDestroy();
             $('#app-table')
                 .DataTable({
@@ -165,8 +167,8 @@ var update = function (paramObj) {
                         },
                         {
                             mRender: function (data, type, row) {
-                                return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`
-                            }
+                                return `<a class="app-edit btn" data-id="${row.id}" id="edit-${row.id}" data-target="upsertAppModal"><i class="fas fa-pencil-alt"></i></a><a class="app-view btn" href="/HealthCheckResult/Index/${row.id}" data-id="${row.id}" id="view-${row.id}"><i class="fas fa-bars"></i></a><a class="app-delete btn" data-id="${row.id}"  id="delete-${row.id}" data-target="deleteModal"><i class="fas fa-trash text-danger"></i></a>`;
+                              },
                         }
                         // { "data": null, "defaultContent": '<button class="btn"><i class="fas fa-pencil-alt"></i></button><button class="btn"><i class="fas fa-bars"></i></button><button class="btn"><i class="fas fa-trash text-danger"></i></button>', "sortable": false }
                     ],
